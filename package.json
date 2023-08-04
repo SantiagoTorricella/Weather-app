@@ -1,0 +1,40 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoTorricella/Weather-app.git"
+  },
+  "author": "Santiago Torricella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantiagoTorricella/Weather-app/issues"
+  },
+  "homepage": "https://github.com/SantiagoTorricella/Weather-app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@webpack-cli/generators": "^3.0.7",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.46.0",
+    "eslint-config-google": "^0.14.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.10.0"
+  }
+}
