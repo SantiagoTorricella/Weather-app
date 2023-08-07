@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&family=Roboto+Slab:wght@100&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,20 +10,41 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: "Handjet", cursive;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  margin-top: 1em;
+  margin-top: 0.2em;
+  font-size: 50px;
 }
 
 .header__left {
+  font-size: larger;
+  font-weight: 100;
   margin-left: 1em;
 }
 
 .header__right {
   margin-right: 1em;
+}
+
+.search-bar {
+  border-style: none;
+  outline: none;
+  padding: 0.2em;
+  background-color: rgba(105, 255, 243, 0.4);
+  font-family: "Handjet", cursive;
+  font-size: 20px;
+}
+
+.search-button {
+  border-style: none;
+  padding: 0.2em;
+  background-color: rgba(105, 255, 243, 0.2);
+  font-family: "Handjet", cursive;
+  font-size: 20px;
 }
 
 .box-display {
@@ -35,9 +58,10 @@ header {
   height: 500px;
   width: 500px;
   background-color: rgba(0, 255, 255, 0.5);
-  border: solid white 5px;
+  border: solid rgba(255, 255, 255, 0.4) 5px;
   display: flex;
   color: black;
+  border-radius: 20%;
 }
 
 .display__left {
@@ -45,23 +69,29 @@ header {
   flex-direction: column;
   width: 50%;
   height: 100%;
-  align-items: center;
-  border-right: solid black 1px;
 }
 
 .city-info {
   height: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.city-prov {
+  opacity: 70%;
+}
+
+.city-country {
+  opacity: 60%;
 }
 
 .city-info > * {
+  height: 33%;
   margin: 1em;
-  font-size: larger;
-  font-weight: 500;
-  border-bottom: solid black 1px;
-  width: 100%;
 }
 
 .climate-img {
@@ -69,9 +99,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
-  width: 200px;
-  border-top: solid black 1px;
+  filter: brightness(0) saturate(100%);
 }
 
 .display__right {
@@ -79,11 +107,26 @@ header {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .display__right > * {
-  margin: 5em;
-  border-bottom: solid black 1px;
+  height: 33%;
+  margin-top: 2em;
+  font-size: 30px;
+}
+
+@media all and (max-width: 600px) {
+  header {
+    font-size: 25px;
+  }
+  .search-bar {
+    width: 100px;
+  }
+  .display {
+    height: 550px;
+    width: 320px;
+    margin: 0 20px;
+  }
 }
