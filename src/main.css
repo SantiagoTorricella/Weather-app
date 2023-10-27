@@ -40,6 +40,7 @@ header {
 }
 
 .search-button {
+  cursor: pointer;
   border-style: none;
   padding: 0.2em;
   background-color: rgba(105, 255, 243, 0.2);
