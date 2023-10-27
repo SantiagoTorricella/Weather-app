@@ -1,10 +1,10 @@
 # Weather-app
-App that displays the weather from the city that you enter on the searchbar.
+App that displays the weather of the location that the user searchs.
 
-This is the first project where i use async coding with api requests.
+The aim of this project was to start understanding async code while using api requests to obtain and use the data. This project is part of The Odin Project JS Curriculum.
 
 [**LIVE DEMO**](https://santiagotorricella.github.io/Weather-app/)
 
 ### Future work
-- Redesing UI
+- Redesign UI
 - Better display for weather imgs
