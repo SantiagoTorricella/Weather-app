@@ -23,7 +23,6 @@ let currentClimate = "";
 async function getAndSaveData() {
   currentCity = getCity();
   currentClimate = await getClimate(currentCity);
-  console.log(currentClimate);
 }
 
 // ==== FORMAT DATE ====
