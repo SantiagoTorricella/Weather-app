@@ -3,8 +3,6 @@
 /* eslint-disable require-jsdoc */
 
 import "./main.css";
-import { getCity, getClimate } from "./modules/Climate";
-
 // ==== NODE REFERENCES ====
 const searchButton = document.querySelector(".search-button");
 const cityName = document.querySelector(".city-name");
@@ -18,6 +16,23 @@ const localTime = document.querySelector(".local-time");
 // ==== VARIABLES ====
 let currentCity = "";
 let currentClimate = "";
+
+const searchBar = document.querySelector(".search-bar");
+
+// ========= Get searched city and return it =======
+function getCity() {
+  return searchBar.value;
+}
+
+// ========= Get Climate =========
+async function getClimate(city) {
+  let climate = await fetch(
+    `https://api.weatherapi.com/v1/current.json?key=c01b95f147b446c2b3a11948230308&q=${city}&aqi=yes`,
+    { mode: "cors" }
+  );
+  let climateData = await climate.json();
+  return climateData;
+}
 
 // ==== SEARCH FOR THE WEATHER OF THE DESIRED CITYD ====
 async function getAndSaveData() {
@@ -43,14 +58,7 @@ async function pushData() {
   cityProv.innerText = currentClimate.location.region;
   cityCountry.innerText = currentClimate.location.country;
   climateImg.src = currentClimate.current.condition.icon;
-  temperature.innerText =
-    currentClimate.current.temp_c +
-    "°C" +
-    " " +
-    "/" +
-    " " +
-    currentClimate.current.temp_f +
-    "°F";
+  temperature.innerText = currentClimate.current.temp_c + "°C" + " " + "/" + " " + currentClimate.current.temp_f + "°F";
   condition.innerText = currentClimate.current.condition.text;
   localTime.innerText = getDayFormated();
 }
